@@ -5,8 +5,8 @@ import Link from 'next/link';
 import { createClient } from '@supabase/supabase-js';
 
 const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL || '',
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || ''
+  'SUA_URL_DO_SUPABASE_AQUI',
+  'SUA_CHAVE_ANON_DO_SUPABASE_AQUI'
 );
 
 interface Paciente {

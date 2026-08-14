@@ -4,11 +4,9 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { createClient } from '@supabase/supabase-js';
 
-export const dynamic = 'force-dynamic';
-
 const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL || '',
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || ''
+  'COLE_AQUI_SUA_URL_REAL_DO_SUPABASE',
+  'COLE_AQUI_SUA_CHAVE_REAL_DO_SUPABASE'
 );
 
 interface Documento {
