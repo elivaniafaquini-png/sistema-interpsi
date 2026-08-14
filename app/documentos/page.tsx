@@ -1,12 +1,15 @@
 'use client';
 
+export const dynamic = 'force-dynamic';
+export const fetchCache = 'force-no-store';
+
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { createClient } from '@supabase/supabase-js';
 
 const supabase = createClient(
-  'COLE_AQUI_SUA_URL_REAL_DO_SUPABASE',
-  'COLE_AQUI_SUA_CHAVE_REAL_DO_SUPABASE'
+  process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://sua-url-aqui.supabase.co',
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'sua-chave-aqui'
 );
 
 interface Documento {
