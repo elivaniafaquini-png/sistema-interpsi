@@ -1,11 +1,14 @@
 'use client';
 
+export const dynamic = 'force-dynamic';
+export const fetchCache = 'force-no-store';
+
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://sua-url-aqui.supabase.co';
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'sua-chave-aqui';
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 export default function LoginPage() {
@@ -29,7 +32,6 @@ export default function LoginPage() {
       setErro('Falha no login: ' + error.message);
       setLoading(false);
     } else {
-      // Salvar sessão e redirecionar
       router.push('/');
     }
   };
